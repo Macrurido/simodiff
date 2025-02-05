@@ -3,18 +3,10 @@ title: "simodif: Sigmoidal models with different functional forms to estimate le
  <img src='images/simodiff.png'
 align='right' height='20%' width='20%'/>"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-output:
-  html_document:
-    toc: yes
-    toc_depth: 3
-    toc_float:
-      toc_collapsed: yes
-      collapsed: yes
-      smooth_scroll: yes
-    df_print: paged
-params: null
-fig_width: 100%
+output: rmarkdown::github_document
+
 ---
+
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 

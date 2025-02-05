@@ -4,8 +4,6 @@ length at 50% maturity
 ================
 04 febrero 2025
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 Shield: [![CC BY
 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
