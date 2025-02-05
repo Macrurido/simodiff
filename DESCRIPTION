@@ -1,0 +1,39 @@
+Package: simodiff
+Type: Package
+Title: Sigmoidal models with different functional forms to estimate length at 50% maturity
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Hugo", "Aguirre-Villaseñor",
+      email = "hugo.aguirre@imipas.gob.mx",
+      role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0002-9846-0915")
+    )
+  )
+Description: This methodological package is developed to estimates the mean size
+    at sexual maturity (L50) while considering the functional form
+    (Aguirre-Villaseñor et al., 2022). To illustrate this, five sigmoidal models
+    were used;  Gompertz (GoM), logistic (LoM), Hill (HiM), Weibull (WeM), and 
+    gamma (GaM).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    htmltools (>= 0.5.8.1),
+    knitr (>= 1.49),
+    rmarkdown (>= 2.29),
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    dplyr (>= 1.1.4),
+    ggplot2 (>= 3.5.1),
+    magrittr (>= 2.0.3),
+    Repbio (>= 0.1.0),
+    stats (>= 4.4.0),
+    svDialogs (>= 1.1.0),
+    tidyverse (>= 2.0.0)
+Remotes: 
+    Macrurido/Repbio
+VignetteBuilder: knitr
