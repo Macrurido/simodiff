@@ -37,3 +37,5 @@ Imports:
 Remotes: 
     Macrurido/Repbio
 VignetteBuilder: knitr
+URL: https://github.com/Macrurido/simodiff
+BugReports: https://github.com/Macrurido/simodiff/issues
