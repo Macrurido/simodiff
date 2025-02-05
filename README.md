@@ -4,7 +4,8 @@ length at 50% maturity
 ================
 04 febrero 2025
 
-Shield: [![CC BY
+toc: yes toc_depth: 3 toc_float: toc_collapsed: yes collapsed: yes
+smooth_scroll: yes df_print: paged Shield: [![CC BY
 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
 simodiff © 2024 by Hugo Aguirre Villaseñor is licensed under a [Creative

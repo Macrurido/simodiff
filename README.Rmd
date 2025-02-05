@@ -7,9 +7,6 @@ output: rmarkdown::github_document
 
 ---
 
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -19,7 +16,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-
+  toc: yes
+    toc_depth: 3
+    toc_float:
+      toc_collapsed: yes
+      collapsed: yes
+      smooth_scroll: yes
+    df_print: paged
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 simodiff © 2024 by Hugo Aguirre Villaseñor is licensed under a
