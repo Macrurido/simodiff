@@ -128,7 +128,12 @@ The console prompts you with the question: **Are you happy with the
 model values? 1=Yes, 0= No** If you choose 1, it means “yes,” and if you
 choose 0, it means “no.” Type the appropriate number and press Enter.
 
-[glad](https://github.com/Macrurido/simodiff/blob/master/images/glad.png)
+<figure>
+<img
+src="https://github.com/Macrurido/simodiff/blob/master/images/glad.png"
+alt="glad" />
+<figcaption aria-hidden="true">glad</figcaption>
+</figure>
 
 > ***NOTE:*** The values of the B1 and B2 parameters are displayed in
 > the console prompt and figure.
