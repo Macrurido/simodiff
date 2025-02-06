@@ -1,4 +1,4 @@
-simodif: Sigmoidal models with different functional forms to estimate
+simodiff: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
 <img src=https://github.com/Macrurido/simodiff/blob/master/images/simodiff.png align='right' height='20%' width='20%'/>
 ================
