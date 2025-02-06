@@ -123,6 +123,7 @@ line), is calculated based on the chosen model and the respective
 initial or revised values of the parameters:
 `y_hat <- models[[i]](prm[[i]],x)`.
 
+![glad_plot](https://github.com/Macrurido/simodiff/blob/master/images/glad_plot.png)
 The console prompts you with the question: **Are you happy with the
 model values? 1=Yes, 0= No** If you choose 1, it means “yes,” and if you
 choose 0, it means “no.” Type the appropriate number and press Enter.
