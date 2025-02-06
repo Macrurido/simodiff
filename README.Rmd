@@ -3,8 +3,10 @@ title: "simodif: Sigmoidal models with different functional forms to estimate le
  <img src='images/simodiff.png'
 align='right' height='20%' width='20%'/>"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-output: rmarkdown::github_document
-
+output: 
+  rmarkdown::github_document:
+    toc: true
+    toc_depth: 3
 ---
 
 ```{r, include = FALSE}
@@ -16,13 +18,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-  toc: yes
-    toc_depth: 3
-    toc_float:
-      toc_collapsed: yes
-      collapsed: yes
-      smooth_scroll: yes
-    df_print: paged
+
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 simodiff © 2024 by Hugo Aguirre Villaseñor is licensed under a

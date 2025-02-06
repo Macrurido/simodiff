@@ -2,10 +2,17 @@ simodif: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
 <img src='images/simodiff.png' align='right' height='20%' width='20%'/>
 ================
-04 febrero 2025
+05 febrero 2025
 
-toc: yes toc_depth: 3 toc_float: toc_collapsed: yes collapsed: yes
-smooth_scroll: yes df_print: paged Shield: [![CC BY
+- [simodiff](#simodiff)
+  - [Installation](#installation)
+  - [Package function](#package-function)
+    - [General functions](#general-functions)
+    - [Model functions](#model-functions)
+  - [Example](#example)
+  - [References](#references)
+
+Shield: [![CC BY
 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
 simodiff © 2024 by Hugo Aguirre Villaseñor is licensed under a [Creative
