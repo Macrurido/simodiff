@@ -1,6 +1,6 @@
 simodif: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
-<img src='images/simodiff.png' align='right' height='20%' width='20%'/>
+<img src=https://github.com/Macrurido/simodiff/blob/master/images/simodiff.png align='right' height='20%' width='20%'/>
 ================
 05 febrero 2025
 
@@ -26,7 +26,8 @@ License](http://creativecommons.org/licenses/by/4.0/).
 
 <!-- badges: start -->
 
-![simodiff]('images/simodiff.png') <!-- badges: end -->
+[simodiff](https://github.com/Macrurido/simodiff/blob/master/images/simodiff.png)
+<!-- badges: end -->
 
 The goal of simodiff is to evaluates the performance of different
 sigmoidal models with different functional forms.
