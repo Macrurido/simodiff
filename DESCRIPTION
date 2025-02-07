@@ -39,3 +39,5 @@ Remotes:
 VignetteBuilder: knitr
 URL: https://github.com/Macrurido/simodiff
 BugReports: https://github.com/Macrurido/simodiff/issues
+Depends: 
+    R (>= 3.5)
