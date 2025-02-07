@@ -132,7 +132,7 @@ Type the appropriate number and press Enter.
 
 
 
-> **_NOTE:_** The values of the B1 and B2 parameters are displayed in the console prompt and figure.
+> **_NOTE:_** The model and the values of parameters B1 and B2 are presented in the console prompt and figure.
 
 
 If you type 0, you will need to provide the new values for parameters b1 and b2.

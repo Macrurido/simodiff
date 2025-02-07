@@ -135,8 +135,8 @@ alt="glad" />
 <figcaption aria-hidden="true">glad</figcaption>
 </figure>
 
-> ***NOTE:*** The values of the B1 and B2 parameters are displayed in
-> the console prompt and figure.
+> ***NOTE:*** The model and the values of parameters B1 and B2 are
+> presented in the console prompt and figure.
 
 If you type 0, you will need to provide the new values for parameters b1
 and b2. Enter the new value for b1 and press Enter, then do the same for
