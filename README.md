@@ -103,7 +103,7 @@ reproduction by class interval **x_active**.
 
 It provides a data frame contains four variables (columns): the class
 mark `CM`, the absolute frequency of the total number of organisms `ni`,
-the number of organisms active during reproduction `ni`, and the
+the number of organisms active during reproduction `mi`, and the
 proportions of reproductive active organisms in each length class.
 
 `glad()` Graphical approximation of initial values. The initial values

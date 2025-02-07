@@ -6,11 +6,13 @@
 #'
 #' It provides a data frame contains four variables (columns): the class mark `CM`,
 #' the absolute frequency of the total number of organisms `ni`, the  number of
-#' organisms active during reproduction `ni`, and the proportions of reproductive
+#' organisms active during reproduction `mi`, and the proportions of reproductive
 #' active organisms in each length class.
 #'
 #'
-#'  This function utilizes the `fn_freq()` function from the `Rebio` package.
+#'  This function utilizes the `fn_freq()` function from the `Repbio` package.
+#'
+#' @source <https://github.com/Macrurido/Repbio.git>
 #'
 #' @param x_total  A numeric vector of the length of total of organisms in the sample
 #' @param x_active A numeric vector of the length of reproductive active organisms
@@ -22,7 +24,7 @@
 #'          variable expressed as a fraction of n; for example, the proportion
 #'          of active organisms to the total number of organisms in the ith class interval.
 #'
-#' @seealso fn_freq() from the `Rebio` package
+#' @seealso fn_freq() from the `Repbio` package
 #'
 #' @importFrom Repbio fn_freq
 #'

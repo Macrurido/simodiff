@@ -1,0 +1,96 @@
+---
+title: "freq_mature"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{freq_mature}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(simodiff)
+```
+
+
+The function calculates the absolute frequency of the total number of
+organisms **x_total** and the organisms active during reproduction by class
+interval **x_active**.
+
+It provides a data frame contains four variables (columns): the class mark `CM`,
+the absolute frequency of the total number of organisms `ni`, the  number of
+organisms active during reproduction `mi`, and the proportions of reproductive
+active organisms in each length class.
+
+This function utilizes the `fn_freq()` function from the `Repbio` package.
+![Repbio](https://github.com/Macrurido/Repbio.git)
+
+## Arguments
+
+The arguments in the function are as follows:
+
+    x_total  A numeric vector of the length of total of organisms in the sample
+    x_active A numeric vector of the length of reproductive active organisms
+    Imin     A numeric value of the shortest organism.
+    Imax     A numeric value of the longest organism.
+    bin      A numeric value that represents the amplitude of the class interval.
+
+## Returns
+
+The function returns data frame with the frequencies and proportions of a binomial
+variable expressed as a fraction of n; for example, the proportion of active 
+organisms to the total number of organisms in the ith class interval.
+
+## Example
+
+Two normal random number distributions have been created. For example, the first
+distribution represents females who are inactive during reproduction `x_inactive`,
+with a sample size (n) of 100, a mean (μ) of 20, and a standard deviation (σ) of 5.
+The second distribution represents females who are active during reproduction
+`x_active`, with a sample size (n) of 50, a mean (μ) of 40, and a standard deviation
+(σ) of 10.
+
+The minimum and maximum values of the size range are defined as `Imin` and `Imax`,
+respectively. Additionally, the `bin` is designated arbitrarily with a value of 5.
+
+```{r}
+library(simodiff)
+set.seed(16)
+x_inactive <- round(rnorm(100, 20,sd=5),2)
+x_active <- round(rnorm(50, 40,10),2)
+x_total <- c(x_inactive, x_active)
+
+Imin <- (trunc(min(x_total)/5))*5
+Imax <- (ceiling(max(x_total)/5))*5
+bin <- 5
+
+freq_mature <- freq_mature(x_total, x_active, Imin, Imax, bin)
+freq_mature
+
+```
+
+
+## The function
+
+```{r}
+freq_mature <- function(x_total, x_active, Imin, Imax, bin){
+                        ni <- Repbio::fn_freq(x_total,Imin,Imax,bin)
+                        mi <- Repbio::fn_freq(x_active,Imin,Imax,bin)
+               # Proportion reproductive active organisms
+                        P_act <- mi[,2]/ni[,2]
+                        f_tmp <- cbind(CM= ni[,1],
+                                       ni= ni[,2],
+                                       mi= mi[,2],
+                                       P_act)
+                        f_tmp <- as.data.frame(f_tmp)
+                        return(f_tmp)
+}
+
+```
+

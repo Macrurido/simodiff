@@ -3,6 +3,9 @@
 \name{freq_mature}
 \alias{freq_mature}
 \title{freq_mature}
+\source{
+\url{https://github.com/Macrurido/Repbio.git}
+}
 \usage{
 freq_mature(x_total, x_active, Imin, Imax, bin)
 }
@@ -30,10 +33,10 @@ interval \strong{x_active}.
 \details{
 It provides a data frame contains four variables (columns): the class mark \code{CM},
 the absolute frequency of the total number of organisms \code{ni}, the  number of
-organisms active during reproduction \code{ni}, and the proportions of reproductive
+organisms active during reproduction \code{mi}, and the proportions of reproductive
 active organisms in each length class.
 
-This function utilizes the \code{fn_freq()} function from the \code{Rebio} package.
+This function utilizes the \code{fn_freq()} function from the \code{Repbio} package.
 }
 \examples{
 \dontrun{
@@ -42,5 +45,5 @@ freq_mature <- freq_mature(x_total, x_active, Imin, Imax, bin)
 
 }
 \seealso{
-fn_freq() from the \code{Rebio} package
+fn_freq() from the \code{Repbio} package
 }
