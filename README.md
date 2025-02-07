@@ -1,8 +1,8 @@
 simodiff: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
-<img src=https://github.com/Macrurido/simodiff/blob/master/images/simodiff.png align='right' height='20%' width='20%'/>
+<img src=https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png align='right' height='20%' width='20%'/>
 ================
-05 febrero 2025
+06 febrero 2025
 
 - [simodiff](#simodiff)
   - [Installation](#installation)
@@ -26,7 +26,7 @@ License](http://creativecommons.org/licenses/by/4.0/).
 
 <!-- badges: start -->
 
-[simodiff](https://github.com/Macrurido/simodiff/blob/master/images/simodiff.png)
+[simodiff](https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png)
 <!-- badges: end -->
 
 The goal of simodiff is to evaluates the performance of different
@@ -123,14 +123,14 @@ line), is calculated based on the chosen model and the respective
 initial or revised values of the parameters:
 `y_hat <- models[[i]](prm[[i]],x)`.
 
-![glad_plot](https://github.com/Macrurido/simodiff/blob/master/images/glad_plot.png)
+![glad_plot](https://github.com/Macrurido/simodiff/blob/master/man/figures/glad_plot.png)
 The console prompts you with the question: **Are you happy with the
 model values? 1=Yes, 0= No** If you choose 1, it means “yes,” and if you
 choose 0, it means “no.” Type the appropriate number and press Enter.
 
 <figure>
 <img
-src="https://github.com/Macrurido/simodiff/blob/master/images/glad.png"
+src="https://github.com/Macrurido/simodiff/blob/master/man/figures/glad.png"
 alt="glad" />
 <figcaption aria-hidden="true">glad</figcaption>
 </figure>
