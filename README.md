@@ -26,7 +26,7 @@ License](http://creativecommons.org/licenses/by/4.0/).
 
 <!-- badges: start -->
 
-[simodiff](https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png)
+![simodiff](https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png)
 <!-- badges: end -->
 
 The goal of simodiff is to evaluates the performance of different
@@ -123,7 +123,13 @@ line), is calculated based on the chosen model and the respective
 initial or revised values of the parameters:
 `y_hat <- models[[i]](prm[[i]],x)`.
 
-![glad_plot](https://github.com/Macrurido/simodiff/blob/master/man/figures/glad_plot.png)
+<figure>
+<img
+src="https://github.com/Macrurido/simodiff/blob/master/man/figures/glad_plot.png"
+alt="glad_plot" />
+<figcaption aria-hidden="true">glad_plot</figcaption>
+</figure>
+
 The console prompts you with the question: **Are you happy with the
 model values? 1=Yes, 0= No** If you choose 1, it means “yes,” and if you
 choose 0, it means “no.” Type the appropriate number and press Enter.
