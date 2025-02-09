@@ -1,5 +1,5 @@
 ---
-title: "freq_mature {simodiff}"
+title: "freq_mature"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{freq_mature}
@@ -47,12 +47,8 @@ The function returns a data frame with the frequencies and proportions of a bino
 variable expressed as a fraction of n; for example, the proportion of active 
 organisms to the total number of organisms in the ith class interval.
 
-## See also
-
-fn_freq() from the `Repbio` package
-
 ## Import from 
-  Repbio::fn_freq
+fn_freq() from the `Repbio` package
 
 ## Example
 

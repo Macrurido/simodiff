@@ -2,7 +2,7 @@
 % Please edit documentation in R/freq_mature.R
 \name{freq_mature}
 \alias{freq_mature}
-\title{freq_mature {simodiff}}
+\title{freq_mature}
 \source{
 \url{https://github.com/Macrurido/Repbio.git}
 }

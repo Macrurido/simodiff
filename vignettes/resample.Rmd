@@ -1,5 +1,5 @@
 ---
-title: "resample {simodiff}"
+title: "resample"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{resample}
@@ -30,6 +30,7 @@ The results are stored in a list, with the first item representing the original 
 ## Arguments
 
 The arguments in the function are as follows:
+
     df   A data frame showing the length and binomial condition indicating
           whether organisms are inactive (0) or actively reproducing (1).
     B    An integer that determines the number of resamplings.
@@ -43,12 +44,9 @@ The arguments in the function are as follows:
 
 The function outputs a list where the first item contains the original data, and items 2 to B+1 contain the resampled data frames, with B representing the number of resamplings.
 
-## Seealso
-freq_mature() from simodiff package
-
 ## Import from
-dplyr::sample_n
-simodiff::freq_mature
+freq_mature() from simodiff package
+sample_n)= from dplyr package
 
 ## Example
 
@@ -62,11 +60,18 @@ The number of resamplings `B` must be deffined by the researcher, whereas `n`
 indicates the number of rows to be included in the resampled data frame.
 
 
-```{r, }
+```{r, eval = FALSE}
 set.seed(16)
-library(simodiff)
-df <- simodiff::Lperu.rda
+
+#df <- url('https://github.com/Macrurido/simodiff/blob/master/data/Lperu.rda')
+#load(df)
+#close(df)
+
+
+df <- load("data/Lperu.rda")
 df <- df[-1]
+df <- Lperu
+
 Imin <- (trunc(min(df$Length)/5))*5
 Imax <- (ceiling(max(df$Length)/5))*5
 bin <- 5
@@ -79,6 +84,7 @@ f_resample
 ```
 
 ## The function
+
 ```{r}
 resample <- function(df, B, n, Imin, Imax, bin){
                           r_list <- vector("list", length = B+1)

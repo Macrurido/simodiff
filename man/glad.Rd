@@ -2,7 +2,7 @@
 % Please edit documentation in R/glad.R
 \name{glad}
 \alias{glad}
-\title{glad {simodiff}}
+\title{glad}
 \usage{
 glad(models, prm, df, x_label, y_label)
 }

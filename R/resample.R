@@ -31,13 +31,17 @@
 #'
 #' @examples
 #' \dontrun{
-#' df <- mydata[,-c(1,3)]
-#' B <- 100
-#' n <- dim(df)[1]
+#' set.seed(16)
 #'
-#' Imin <- 10
-#' Imax <- 80
-#' bin <- 2.5
+#' df <- load("data/Lperu.rda")
+#' df <- df[-1]
+#'
+#' Imin <- (trunc(min(df$Length)/5))*5
+#' Imax <- (ceiling(max(df$Length)/5))*5
+#' bin <- 5
+#'
+#' B <- 3
+#' n <- dim(df)[1]
 #'
 #' f_resample <- resample(df, B, n, Imin, Imax, bin)
 #' f_resample

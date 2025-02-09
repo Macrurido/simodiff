@@ -2,7 +2,7 @@
 % Please edit documentation in R/nllb.R
 \name{nllb}
 \alias{nllb}
-\title{nllb {simodiff}}
+\title{nllb}
 \usage{
 nllb(prm, df, model)
 }

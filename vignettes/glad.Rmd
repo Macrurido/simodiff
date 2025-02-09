@@ -1,5 +1,5 @@
 ---
-title: "glad {simodiff}"
+title: "glad"
 subtitle: "Graphical approximation of initial values"
 output: rmarkdown::html_vignette
 vignette: >
@@ -83,7 +83,8 @@ The function returns a list with the new parameter values.
   ggplot2, tidyverse
   
 ## Import from
-  grDevices:dev.set, svDialogs:dlgInput    
+  dev.set() from the grDevices package
+  dlgInput() from the svDialogs package    
     
 ## Example
 
@@ -116,7 +117,7 @@ prm <- glad(models, prm, df, x_label, y_label)
 
 ## The function
 
-```{r}
+```{r, eval = FALSE}
 glad <- function(models, prm, df, x_label, y_label){
   x <- as.numeric(df[,1])
   for(i in 1:length(models)){

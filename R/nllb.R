@@ -1,4 +1,4 @@
-#' nllb {simodiff}
+#' nllb
 #'
 #' The function calculates the negative log-likelihood for a binomial
 #' distribution of residuals.

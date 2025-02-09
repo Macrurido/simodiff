@@ -1,5 +1,5 @@
 ---
-title: "nllb {simodiff}"
+title: "nllb"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{nllb}

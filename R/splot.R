@@ -34,16 +34,21 @@
 #'
 #' @examples
 #' \dontrun{
-#' x <- seq(10,30,by=2.5)
-#' y <- y
+#' x <- seq(5,70, by=5)
+#' y <- c(0.00, 0.06,0.05, 0.20, 0.45, 0.70, 0.88, 0.93, 1.00, 1.00, 1.00, 1.00, 1.00)
+#'
 #' b1 <- 38
 #' b2 <- 8
+#'
 #' prm <- c("b1"=b1,"b2"=b2)
 #' y_hat <- HiM(prm, x)
+#'
 #' df <- cbind(x, y, y_hat)
 #' df <- as.data.frame(df)
+#'
 #' x_label <- "Class mark (cm)"
 #' y_label <- "Proportion"
+#'
 #' p <- splot(df, x_label, y_label)
 #' }
 #'

@@ -1,4 +1,4 @@
-#' glad {simodiff}
+#' glad
 #'
 #' The `glad()` function stores the graphically determined values of the start
 #' parameters of the models you want to analyze. Each of the models is analyzed
