@@ -1,0 +1,101 @@
+---
+title: "resample {simodiff}"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{resample}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(simodiff)
+```
+
+This function resamples the organisms in the data frame `df`, which
+includes the `Length` and `Binomial` columns, indicating whether each organism is
+inactive (0) or active in reproduction (1).
+
+The frequency of mature organisms to the total number of organisms is calculated
+for each class mark using the `simodiff::freq_mature` function.
+
+The results are stored in a list, with the first item representing the original data frequencies. The variable `B` defines the number of resamplings to be performed.
+
+## Arguments
+
+The arguments in the function are as follows:
+    df   A data frame showing the length and binomial condition indicating
+          whether organisms are inactive (0) or actively reproducing (1).
+    B    An integer that determines the number of resamplings.
+    n    An integer that indicates the number of rows to be included in the
+          resampled data frame.
+    Imin A numeric value of the shortest organism.
+    Imax A numeric value of the longest organism.
+    bin  A numeric value that represents the amplitude of the class interval.
+
+## Returns
+
+The function outputs a list where the first item contains the original data, and items 2 to B+1 contain the resampled data frames, with B representing the number of resamplings.
+
+## Seealso
+freq_mature() from simodiff package
+
+## Import from
+dplyr::sample_n
+simodiff::freq_mature
+
+## Example
+
+This example uses the `Lperu` dataset, which is included in a `simodiff` package.
+The dataset contains three variables: sex, length (cm), and binomial, indicating
+reproductive conditions with 0 for inactive and 1 for active reproductive organisms.
+
+To determine the mature frequency, the minimum and maximum values of the size range are defined as `Imin` and `Imax`, respectively. Additionally, the `bin` value is set to 5 arbitrarily. However, these values could be deffined by the researcher.
+
+The number of resamplings `B` must be deffined by the researcher, whereas `n`
+indicates the number of rows to be included in the resampled data frame.
+
+
+```{r, }
+set.seed(16)
+library(simodiff)
+df <- simodiff::Lperu.rda
+df <- df[-1]
+Imin <- (trunc(min(df$Length)/5))*5
+Imax <- (ceiling(max(df$Length)/5))*5
+bin <- 5
+
+B <- 3
+n <- dim(df)[1]
+
+f_resample <- resample(df, B, n, Imin, Imax, bin)
+f_resample
+```
+
+## The function
+```{r}
+resample <- function(df, B, n, Imin, Imax, bin){
+                          r_list <- vector("list", length = B+1)
+                    for(i in 1:(B+1)){
+                      if(i==1){
+                          r_data <- df
+                      }else{
+                          r_data <- dplyr::sample_n(df, n,replace = T)
+                      }
+                          x_total <- r_data[,1]
+                          tmp <- r_data[r_data[,2] == 1,]
+                          x_active <- tmp[,1]
+                          r_list[[i]] <- simodiff::freq_mature(x_total, x_active,
+                                                              Imin, Imax, bin)
+                    }
+                          return(r_list)
+}
+
+```
+

@@ -2,7 +2,7 @@
 % Please edit documentation in R/glad.R
 \name{glad}
 \alias{glad}
-\title{glad}
+\title{glad {simodiff}}
 \usage{
 glad(models, prm, df, x_label, y_label)
 }
@@ -32,12 +32,12 @@ function.
 \examples{
 \dontrun{
 i <- 1
-x <- seq(10,30,by=2.5)
-y <- y
-b1 <- 38
-b2 <- 8
-prm[[i] <- c("b1"=b1,"b2"=b2)
-prm <- prm[[i]]
+models <- list(LoM= simodiff::LoM)
+prm <- list(c("b1"=38,"b2"=8))
+x <- seq(16.25,66.25, by=2.5)
+y <- c(0.06, 0.00, 0.01, 0.01, 0.08, 0.04, 0.04,
+      0.06, 0.58, 0.42, 0.69, 0.80, 1.00, 0.83,
+      1.00, 1.00, 1.00, 1.00, 1.00,  NaN, 1.00)
 df <- cbind(x, y)
 df <- as.data.frame(df)
 x_label <- "Class mark (cm)"
@@ -48,4 +48,6 @@ prm <- glad(models, prm, df, x_label, y_label)
 }
 \seealso{
 again function from simodiff package.
+
+splot function from simodiff package.
 }

@@ -22,9 +22,9 @@ resampled data frame.}
 \item{bin}{A numeric value that represents the amplitude of the class interval.}
 }
 \value{
-A list that contains the data frames of the original data frequencies.
-The original data is in the first item, and the resampled data
-frames are from items 2 to B+1.
+The function outputs a list where the first item contains the original
+data, and items 2 to B+1 contain the resampled data frames, with B
+representing the number of resamplings.
 
 @seealso freq_mature() from simodiff package
 }

@@ -14,7 +14,7 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @name Lperu
+#' @name Lperu {simodiff}
 #' @usage data(Lperu)
 #' @format A data frame with 917 rows and 2 variables
 #' @source <https://github.com/Macrurido/simodiff/blob/master/data/Lperu.rda>

@@ -1,4 +1,4 @@
-#' glad
+#' glad {simodiff}
 #'
 #' The `glad()` function stores the graphically determined values of the start
 #' parameters of the models you want to analyze. Each of the models is analyzed
@@ -16,6 +16,7 @@
 #' @returns a list with the new parameter values.
 #'
 #' @seealso again function from simodiff package.
+#' @seealso splot function from simodiff package.
 #'
 #' @import ggplot2
 #' @import tidyverse
@@ -25,12 +26,12 @@
 #' @examples
 #' \dontrun{
 #' i <- 1
-#' x <- seq(10,30,by=2.5)
-#' y <- y
-#' b1 <- 38
-#' b2 <- 8
-#' prm[[i] <- c("b1"=b1,"b2"=b2)
-#' prm <- prm[[i]]
+#' models <- list(LoM= simodiff::LoM)
+#' prm <- list(c("b1"=38,"b2"=8))
+#' x <- seq(16.25,66.25, by=2.5)
+#' y <- c(0.06, 0.00, 0.01, 0.01, 0.08, 0.04, 0.04,
+#'       0.06, 0.58, 0.42, 0.69, 0.80, 1.00, 0.83,
+#'       1.00, 1.00, 1.00, 1.00, 1.00,  NaN, 1.00)
 #' df <- cbind(x, y)
 #' df <- as.data.frame(df)
 #' x_label <- "Class mark (cm)"

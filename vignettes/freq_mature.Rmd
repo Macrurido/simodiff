@@ -1,5 +1,5 @@
 ---
-title: "freq_mature"
+title: "freq_mature {simodiff}"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{freq_mature}
@@ -43,9 +43,16 @@ The arguments in the function are as follows:
 
 ## Returns
 
-The function returns data frame with the frequencies and proportions of a binomial
+The function returns a data frame with the frequencies and proportions of a binomial
 variable expressed as a fraction of n; for example, the proportion of active 
 organisms to the total number of organisms in the ith class interval.
+
+## See also
+
+fn_freq() from the `Repbio` package
+
+## Import from 
+  Repbio::fn_freq
 
 ## Example
 
@@ -60,7 +67,6 @@ The minimum and maximum values of the size range are defined as `Imin` and `Imax
 respectively. Additionally, the `bin` is designated arbitrarily with a value of 5.
 
 ```{r}
-library(simodiff)
 set.seed(16)
 x_inactive <- round(rnorm(100, 20,sd=5),2)
 x_active <- round(rnorm(50, 40,10),2)
@@ -74,7 +80,6 @@ freq_mature <- freq_mature(x_total, x_active, Imin, Imax, bin)
 freq_mature
 
 ```
-
 
 ## The function
 

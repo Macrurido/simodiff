@@ -1,4 +1,4 @@
-#' freq_mature
+#' freq_mature {simodiff}
 #'
 #' The function calculates the absolute frequency of the total number of
 #' organisms **x_total** and the organisms active during reproduction by class

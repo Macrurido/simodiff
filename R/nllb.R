@@ -1,4 +1,4 @@
-#' nllb
+#' nllb {simodiff}
 #'
 #' The function calculates the negative log-likelihood for a binomial
 #' distribution of residuals.
@@ -11,15 +11,14 @@
 #' function by using a binomial density probabilistic function (Aguirre-Villaseñor
 #' et al., 2022).
 #'
-#' @param prm    A vector that contains the parameter values b1 and b2 of the selected model.
+#' @param prm    A list that contains the parameter values b1 and b2 of the selected model.
 #' @param df     A data frame, it should be organized as follows:
 #'                 class mark (MC) in column 1; total number of the sample (ni)
 #'                 in column 2; and number of mature organisms (mi) in column 3.
-#' @param model A function that uses the selected model calculates the cumulative density function.
+#' @param model A list that stores the functions of selected models for fitting a cumulative density function.
+
 #'
 #' @returns The binomial negative log-likelihood value.
-#'
-#' @seealso freq_mature() from the Repbio package
 #'
 #' @examples
 #' \dontrun{
@@ -30,8 +29,13 @@
 #' data <- cbind(x,ni,mi,fo)
 #' data <- as.data.frame(data)
 #'
-#' models <- list(GoM=simodiff::GoM, LoM=simodiff::LoM, GaM=simodiff::GaM)
-#' prm <- list(GoM=c("b1"=35,"b2"=11), LoM=c("b1"=38,"b2"=4), GaM=c("b1"=26,"b2"=1.4))
+#' models <- models <- list(GoM=simodiff::GoM, HiM=simodiff::HiM,
+#'                          LoM=simodiff::LoM, WeM=simodiff::WeM,
+#'                          GaM=simodiff::GaM)
+#'
+#' prm <- list(GoM=c("b1"=38,"b2"=0.1), HiM=c("b1"=38,"b2"=10),
+#'             LoM=c("b1"=38,"b2"=5), WeM=c("b1"=38,"b2"=6),
+#'             GaM=c("b1"=21,"b2"=1.8))
 #'
 #' out <- rep(NA,length(models))
 #'
