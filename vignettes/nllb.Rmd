@@ -1,5 +1,6 @@
 ---
 title: "nllb"
+subtitle: "Negative log-likelihood for a binomial distribution of residuals"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{nllb}

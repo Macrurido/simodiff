@@ -22,6 +22,10 @@ library(simodiff)
 The `glad()` function assists in graphically approximating the initial parameters
 needed to fit a model using a functional optimizer.
 
+This is a nested function that stores the values of the start parameters graphically
+determined for the models you want to analyze. The `glad in()` function is
+encapsulated within the main `glad()`.
+
 To use this function, both the models and their corresponding parameters must be
 previously defined and stored in their respective lists—one for models and one for
 parameters.The initial parameter values are set by the researcher based on their experience.
@@ -75,7 +79,7 @@ The function returns a list with the new parameter values.
     
 ## Sea also
 
-    `again()` function from simodiff package.
+    `glad_in()` function from simodiff package.
     `splot()` function from simodiff package.
      Model functions from simodiff package: GoM(), HiM(), LoM(), WeM() and GaM()
 
@@ -88,18 +92,22 @@ The function returns a list with the new parameter values.
     
 ## Example
 
-First, a list of models to be analyzed is defined, including the logistic ('LoM')
-models. Second, the initial values of the parameters are established. A data frame
-containing the class mark and mature proportion is created.The variable "i"
-represents the number of models that will be evaluated.Finally, the labels for 
-the x and y axes are defined.
+First, a list of `models` to be analyzed is defined. Second, the initial values of
+the parameters are established in `prm`. A data frame containing the class mark and
+mature proportion is created `df`.The variable `i` represents the number of models
+that will be evaluated. Finally, the labels for the x-axis and y-axis are defined
+as `x_label` and `y_label`, respectively.
 
- Aqui me quede desarollando el ejemplo
 ```{r, echo=TRUE, eval = FALSE}
 i <- 1
 
-models <- list(LoM= simodiff::LoM)
-prm <- list(c("b1"=38,"b2"=8))
+models <- list(GoM=simodiff::GoM, HiM=simodiff::HiM, 
+               LoM=simodiff::LoM, WeM=simodiff::WeM,
+               GaM=simodiff::GaM)
+
+prm <- list(GoM=c("b1"=38,"b2"=0.1), HiM=c("b1"=38,"b2"=10),
+            LoM=c("b1"=38,"b2"=5), WeM=c("b1"=38,"b2"=6),
+            GaM=c("b1"=21,"b2"=1.8))
 
 x <- seq(16.25,66.25, by=2.5)
 y <- c(0.06, 0.00, 0.01, 0.01, 0.08, 0.04, 0.04,
@@ -121,7 +129,7 @@ prm <- glad(models, prm, df, x_label, y_label)
 glad <- function(models, prm, df, x_label, y_label){
   x <- as.numeric(df[,1])
   for(i in 1:length(models)){
-    betas<- again(i, models, prm, df, x, x_label, y_label)
+    betas<- glad_in(i, models, prm, df, x, x_label, y_label)
     prm[[i]] <- as.numeric(betas)
   }
   return(prm)

@@ -1,0 +1,77 @@
+---
+title: "LoM"
+subtitle: "Logistic model"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{LoM}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(simodiff)
+```
+
+The Logistic model function was implemented to find the value of the
+cumulative density function of a Logistic distribution with certain shape **b1**
+and rate parameters **b2**.
+
+$$p_{i}= \frac{1}{1+e^{-\left(\frac{x_{i}-b_{1}}{b_{2}} \right)}}$$
+
+Where:
+$p_{i}$ represents a binomial variable expressed as a
+       fraction of n; for example, the proportion of active organisms to
+       the total number of organisms in the ith class interval.
+$b_{1}$ is the point of inflection of the curve.
+$b_{2}$ is related directly to the width of the interval.
+
+## Arguments
+
+The arguments in the function are as follows:
+
+    prm a list that stores the Logistic model's parameter values b1 and b2.
+    x   is a numeric vector of the ith class interval.   
+    
+## Returns
+
+The function outputs a numerical vector with the estimated values.
+
+## Example
+
+In this example, fictitious data are utilized. The variable `x` represents the class mark, while `b1` denotes the length at 50% maturity (l50), which is defined as the inflection point of the curve. The variable `b2` is directly related to the width of the interval. Both parameters are stored in the `prm` vector. The results from the LoM() function are stored in `y_hat`.
+
+To visualize the results, a graph illustrating the relationship between `x` and
+`y_hat` is presented; this is not part of the function.
+    
+```{r, warning=FALSE}
+library(ggplot2)
+
+x <- seq(5,70,by=5)
+b1 <- 38
+b2 <- 4
+prm <- c("b1"=b1,"b2"=b2)
+
+y_hat <- LoM(prm, x)
+y_hat 
+
+p <- ggplot()+ geom_point(aes(x=x,y=y_hat))
+p
+```
+
+## The function
+```{r}
+LoM <- function(prm, x){
+  b1 <- prm[1]
+  b2 <- prm[2]
+  x <- x
+  return(1/(1+(exp(-(x-b1)/b2))))
+}
+```
+

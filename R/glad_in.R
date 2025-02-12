@@ -1,10 +1,20 @@
-#' again
+#' glad_in
 #'
-#' In the `again()` function, an iterative process is performed to visually estimate
-#' the values of the model's parameters. This procedure can be repeated until the
-#'  user is satisfied with the input values of the analyzed model's parameters.
+#' An interactive process to visually determine the initial parameters.
 #'
-#' The start values of the parameters are stored in the `prm` list, outside of this function.
+#' The `glad_in()` function is a nested function within the `glad()` function.
+#' It conducts an interactive routine to determine the initial parameter values
+#' that will be utilized later by the `optim()` optimizer for a specific model.
+#'
+#' **_NOTE:_** The `glad_in()` function must be executed in the console; when
+#' run from RMarkdown, the prompt appears, but the figure does not.
+#'
+#' An iterative process is performed to visually estimate the values of the model's
+#' parameters. This procedure can be repeated until the user is satisfied with
+#' the input values of the analyzed model's parameters.
+#'
+#' The start values of the parameters are stored in the `prm` list, outside of
+#' this function.
 #'
 #' The parameters values are adjusted visually by using a plot, aiming to find a
 #' suitable starting value. If the user is satisfied with the values, they are
@@ -20,7 +30,8 @@
 #' If you choose 1, it means "yes," and if you choose 0, it means "no."
 #' Type the appropriate number and press Enter.
 #'
-#' If you are visually satisfied with the adjusted parameters, type 1 to end the repeat loop.
+#' If you are visually satisfied with the adjusted parameters, type 1 to end the
+#'  repeat loop.
 #'
 #' If you type 0, you will need to provide the new values for parameters b1 and b2.
 #' Enter the new value for b1 and press Enter, then do the same for b2. If you
@@ -53,22 +64,27 @@
 #' @examples
 #' \dontrun{
 #' i <- 1
-#' x <- seq(10,30,by=2.5)
-#' y <- y
-#' b1 <- 38
-#' b2 <- 8
-#' prm[[i]] <- c("b1"=b1,"b2"=b2)
-#' prm <- prm[[i]]
+#'
+#' models <- list(LoM= simodiff::LoM)
+#' prm <- list(c("b1"=38,"b2"=8))
+#'
+#' x <- seq(16.25,66.25, by=2.5)
+#' y <- c(0.06, 0.00, 0.01, 0.01, 0.08, 0.04, 0.04,
+#'        0.06, 0.58, 0.42, 0.69, 0.80, 1.00, 0.83,
+#'        1.00, 1.00, 1.00, 1.00, 1.00,  NaN, 1.00)
+#'
 #' df <- cbind(x, y)
 #' df <- as.data.frame(df)
+#'
 #' x_label <- "Class mark (cm)"
 #' y_label <- "Proportion"
-#' prm[[i]] <- again(i, models, prm, df, x, x_label, y_label)
+#'
+#' prm <- glad(models, prm, df, x_label, y_label)
 #' }
 #'
 #' @export
 #'
-again <- function(i, models, prm, df, x, x_label, y_label){
+glad_in <- function(i, models, prm, df, x, x_label, y_label){
   m_name <- names(models)[[i]]
   model <- models[[i]]
   betas <- prm[[i]]

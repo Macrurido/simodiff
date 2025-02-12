@@ -17,11 +17,13 @@
 #'
 #' @examples
 #' \dontrun{
-#' x <- seq(10,30,by=2.5)
-#' b1 <- 26.8
-#' b2 <- 1.44
+#' library(ggplot2)
+#' x <- seq(5,70,by=5)
+#' b1 <- 25
+#' b2 <- 1
 #' prm <- c("b1"=b1,"b2"=b2)
 #' y_hat <- GaM(prm, x)
+#' p <- ggplot()+ geom_point(aes(x=x,y=y_hat))
 #'}
 #'
 #' @importFrom stats pgamma

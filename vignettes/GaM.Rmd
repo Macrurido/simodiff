@@ -1,0 +1,74 @@
+---
+title: "GaM"
+subtitle: "Gamma model"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{GaM}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(simodiff)
+```
+
+The Gamma model function uses the `gamma()` function from the `stats`
+package to find the value of the cumulative density function of a gamma
+distribution with certain shape `b1` and rate parameters `b2`.
+
+`b1` is a numerical value that affects the curve's shape, while `b2` is a
+numerical value directly related to the rate. Both are stored in the `prm` list.
+
+## Arguments
+
+The arguments in the function are as follows:
+
+    prm a list that stores the Gamma model's parameter values b1 and b2.
+    x   is a numeric vector of the ith class interval.   
+    
+## Returns
+
+The function outputs a numerical vector with the estimated values.
+
+## Example
+
+In this example, fictitious data are utilized. The variable `x` represents the class
+mark, while `b1` is a numerical value that affects the curve's shape, while `b2` is a
+numerical value directly related to the rate. Both parameters are stored in the `prm`
+vector. The results from the GaM() function are stored in `y_hat`.
+
+To visualize the results, a graph illustrating the relationship between `x` and
+`y_hat` is presented; this is not part of the function.
+    
+```{r, warning=FALSE}
+library(ggplot2)
+
+x <- seq(5,70,by=5)
+b1 <- 25
+b2 <- 1
+prm <- c("b1"=b1,"b2"=b2)
+
+y_hat <- GaM(prm, x)
+y_hat 
+
+p <- ggplot()+ geom_point(aes(x=x,y=y_hat))
+p
+```
+
+## The function
+```{r}
+GaM <- function(prm, x){
+  b1 <- prm[1]
+  b2 <- prm[2]
+  x <- x
+  return(stats::pgamma(x, b1, rate = 1/b2))
+}
+```
+

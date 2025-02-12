@@ -34,11 +34,13 @@ b2  is related directly to the width of the interval.
 }
 \examples{
 \dontrun{
-x <- seq(10,30,by=2.5)
+library(ggplot2)
+x <- seq(5,70,by=5)
 b1 <- 38
 b2 <- 4
 prm <- c("b1"=b1,"b2"=b2)
 y_hat <- LoM(prm, x)
+p <- ggplot()+ geom_point(aes(x=x,y=y_hat))
 }
 
 }
