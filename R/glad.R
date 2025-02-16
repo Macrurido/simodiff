@@ -7,6 +7,9 @@
 #' For more information, please refer to the help section of the `simodiff::glad_in()`
 #' function.
 #'
+#' For more details about the models, see the information about the functions
+#' included in the simodiff package: GoM(), HiM(), LoM(), WeM() and GaM().
+#'
 #' @param models A list that contains the functions of the models.
 #' @param prm A list that contains the parameters values for each model.
 #' @param df A data frame with the x (class mark), y (proportion) and an empty column y_hat filled with NA

@@ -53,7 +53,7 @@
 #' @export
 nllb <- function(prm, df, model){
   # Remove Zero Values
-  data <- data %>% dplyr::filter(ni > 0 & mi > 0)
+  data <- df %>% dplyr::filter(df[,2] > 0 & df[,3] > 0)
   data <- as.data.frame(data)
   x <- data[,1]
   ni <- data[,2]
@@ -66,4 +66,3 @@ nllb <- function(prm, df, model){
   # Return binomial negative log-likelihood
   return(nll)
 }
-

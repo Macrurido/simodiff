@@ -60,4 +60,3 @@ splot <- function(df, x_label, y_label){
               geom_line(aes(x= df[,1], y= df[,3]), lty = 1)
   print(p)
 }
-

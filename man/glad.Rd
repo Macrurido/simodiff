@@ -28,6 +28,9 @@ parameters graphically determined for the models you want to analyze. The
 \details{
 For more information, please refer to the help section of the \code{simodiff::glad_in()}
 function.
+
+For more details about the models, see the information about the functions
+included in the simodiff package: GoM(), HiM(), LoM(), WeM() and GaM().
 }
 \examples{
 \dontrun{
