@@ -80,37 +80,37 @@ cv_plot
 
 ```{r}
 cv_plot <- function(df,ni,B,nb, x_label, y_label){
-        # Create an empty data frame to store the results `cv_out`.
-              r_names <- levels(df$Factor) # row names
-              grp <- seq(ni,B,by=nb)  # Defining the range of accumulated values.
-        cv_out <- data.frame(matrix(NA,nrow=length(grp),ncol=length(r_names)+1))
-                  colnames(cv_out ) <- c("X",as.character(r_names))
-                  cv_out$X <- grp
-                  
-# Calculate the cumulative coefficient of variation (CV) of L50 for the B 
-# resamples for each model.     
+  # Create an empty data frame to store the results `cv_out`.
+  r_names <- levels(df$Factor) # row names
+  grp <- seq(ni,B,by=nb)  # Defining the range of accumulated values.
+  cv_out <- data.frame(matrix(NA,nrow=length(grp),ncol=length(r_names)+1))
+  colnames(cv_out ) <- c("X",as.character(r_names))
+  cv_out$X <- grp
 
-        for(i in 1:length(r_names)){
-                tmp <- filter(df, Factor == as.character(r_names[i]),)
-            for(j in 1:length(grp)){
-                x <- tmp[,2]
-                xj <- x[c(1:grp[j])]
-                cv_out[j,i+1] <- (sd(xj) / mean(xj)) * 100
-            }         
-        }           
-# Transforming the data set into a tidy format.
-                  tmp <- cv_out %>%
-                        pivot_longer(!X, names_to="model", values_to = "cv")
-                  
-# Plotting the coefficient of variation (CV) results against the cumulative number
-# of iterations for each model.                  
-            p <- ggplot(tmp, aes(x= X, y= as.numeric(cv))) +
-                        scale_linetype_binned()+
-                        geom_line(aes(x= X, y= as.numeric(cv), lty = 1)) +
-                        labs(x= x_label, y= y_label) +
-                        facet_wrap(~factor(as.factor(model), levels= unique(model)))
-            print(p)
-}            
+  # Calculate the cumulative coefficient of variation (CV) of L50 for the B
+  # resamples for each model.
+
+  for(i in 1:length(r_names)){
+    tmp <- filter(df, .data$Factor == as.character(r_names[i]),)
+    for(j in 1:length(grp)){
+      x <- tmp[,2]
+      xj <- x[c(1:grp[j])]
+      cv_out[j,i+1] <- (sd(xj) / mean(xj)) * 100
+    }
+  }
+  # Transforming the data set into a tidy format.
+  tmp <- cv_out %>%
+    pivot_longer(!.data$X, names_to="model", values_to = "cv")
+
+  # Plotting the coefficient of variation (CV) results against the cumulative number
+  # of iterations for each model.
+  p <- ggplot(tmp, aes(x= .data$X, y= as.numeric(.data$cv))) +
+    scale_linetype_binned()+
+    geom_line(aes(x= .data$X, y= as.numeric(.data$cv), lty = 1)) +
+    labs(x= x_label, y= y_label) +
+    facet_wrap(~factor(as.factor(model), levels= unique(model)))
+  print(p)
+}
 ```
 
 
