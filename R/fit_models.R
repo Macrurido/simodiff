@@ -55,16 +55,18 @@
 #'
 #' @export
 fit_models <- function(models, prm, lista, B){
+  # The list includes the original and de B resampled data sets.
+  B <- B+1
   # Create an empty list to store the model summaries.
-        names_M <- names(models)
-        l_models <- sapply(names_M, function(x) NULL)
+  names_M <- names(models)
+  l_models <- sapply(names_M, function(x) NULL)
   # Nested for loop to fit the ith model for jth data set.
   for(i in 1:length(models)){
-        model <- unlist(models[[i]])
-        betas <- unlist(prm[[i]])
-    for(j in 1:B+1) {
-        df <- na.omit(lista[[1]])
-        l_models[[i]][[j]] <- optim(par= betas, fn= nllb, df= df,
+    model <- unlist(models[[i]])
+    betas <- unlist(prm[[i]])
+    for(j in 1:B) {
+      df <- na.omit(lista[[j]])
+      l_models[[i]][[j]] <- optim(par= betas, fn= nllb, df= df,
                                   model= model)
     }
   }
