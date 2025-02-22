@@ -95,7 +95,7 @@ condition is categorized as follows: 0 indicates an immature or inactive mature
 organism, while 1 denotes an actively mature organism (Aguirre-Villaseñor *et 
 al*., 2022).
 
-The package consists of NN functions that facilitate the implementation of the 
+The package consists of <font color="red">NN</font> functions that facilitate the implementation of the 
 methodology used in this analysis:
 
 ### General functions
@@ -140,8 +140,10 @@ Type the appropriate number and press Enter.
 If you type 0, you will need to provide the new values for parameters b1 and b2.
 Enter the new value for b1 and press Enter, then do the same for b2.
 
-If you accidentally press Enter without entering a number, the default return
-value will be NA.
+If you accidentally press Enter, a warning pop-up will appear, informing you to enter a numerical value.
+
+> **_WARNING:_** The `glad_in()` function must be executed in the console; when
+run from RMarkdown, the prompt appears, but the figure does not.
 
 `nllb()` The function calculates the negative log-likelihood for a binomial
 distribution of residuals.
@@ -277,33 +279,16 @@ numerical value directly related to the rate. Both are stored in the `prm` list.
 
 It returns a numerical vector with the estimated values.
 
+## More details
 
-
+For more information, please refer to the respective vignettes,
+which offer detailed descriptions of each function, its
+operations, and examples.
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(simodiff)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+To demonstrate how the package works, please follow the step-by-step process outlined in the "simodiff_steps" vignette, which reconstructs the results presented in the article by Aguirre-Villaseñor et al. (2022).
 
 ## References
-Aguirre-Villaseñor, H., Morales-Bojórquez, E., & Espino-Barr, E. (2022). Implementation of sigmoidal models with different functional forms to estimate length at 50% maturity: A case study of the Pacific red snapper *Lutjanus peru*. Fisheries Research, 248, 106204.
+
+Aguirre-Villaseñor, H., Morales-Bojórquez, E., & Espino-Barr, E. (2022). Implementation of sigmoidal models with different functional forms to estimate length at 50% maturity: A case study of the Pacific red snapper *Lutjanus peru*. Fisheries Research, 248, 106204. https://doi.org/10.1016/j.fishres.2021.106204

@@ -35,12 +35,15 @@
 #'
 #' If you type 0, you will need to provide the new values for parameters b1 and b2.
 #' Enter the new value for b1 and press Enter, then do the same for b2. If you
-#' accidentally press Enter without entering a number, the default return
-#' value will be NA.
+#' accidentally press Enter, a warning pop-up will appear, informing you to enter
+#'  a numerical value.
 #'
 #' After entering the new values for b1 and b2, the loop will repeat, displaying
 #' the graph with the updated parameters and asking you to confirm if you are
 #' satisfied with the new values.
+#'
+#' **WARNING:** The `glad_in()` function must be executed in the console;
+#'  when run from RMarkdown, the prompt appears, but the figure does not.
 #'
 #'
 #' @param i       An integer that specifies which model will be analyzed.

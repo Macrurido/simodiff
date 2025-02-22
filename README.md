@@ -2,13 +2,14 @@ simodiff: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
 <img src=https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png align='right' height='20%' width='20%'/>
 ================
-06 febrero 2025
+21 febrero 2025
 
 - [simodiff](#simodiff)
   - [Installation](#installation)
   - [Package function](#package-function)
     - [General functions](#general-functions)
     - [Model functions](#model-functions)
+  - [More details](#more-details)
   - [Example](#example)
   - [References](#references)
 
@@ -92,8 +93,8 @@ data set, the reproductive condition is categorized as follows: 0
 indicates an immature or inactive mature organism, while 1 denotes an
 actively mature organism (Aguirre-Villaseñor *et al*., 2022).
 
-The package consists of NN functions that facilitate the implementation
-of the methodology used in this analysis:
+The package consists of <font color="red">NN</font> functions that
+facilitate the implementation of the methodology used in this analysis:
 
 ### General functions
 
@@ -148,8 +149,12 @@ If you type 0, you will need to provide the new values for parameters b1
 and b2. Enter the new value for b1 and press Enter, then do the same for
 b2.
 
-If you accidentally press Enter without entering a number, the default
-return value will be NA.
+If you accidentally press Enter, a warning pop-up will appear, informing
+you to enter a numerical value.
+
+> ***WARNING:*** The `glad_in()` function must be executed in the
+> console; when run from RMarkdown, the prompt appears, but the figure
+> does not.
 
 `nllb()` The function calculates the negative log-likelihood for a
 binomial distribution of residuals.
@@ -285,38 +290,18 @@ a numerical value directly related to the rate. Both are stored in the
 
 It returns a numerical vector with the estimated values.
 
+## More details
+
+For more information, please refer to the respective vignettes, which
+offer detailed descriptions of each function, its operations, and
+examples.
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(simodiff)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+To demonstrate how the package works, please follow the step-by-step
+process outlined in the “simodiff_steps” vignette, which reconstructs
+the results presented in the article by Aguirre-Villaseñor et
+al. (2022).
 
 ## References
 
@@ -324,3 +309,4 @@ Aguirre-Villaseñor, H., Morales-Bojórquez, E., & Espino-Barr, E. (2022).
 Implementation of sigmoidal models with different functional forms to
 estimate length at 50% maturity: A case study of the Pacific red snapper
 *Lutjanus peru*. Fisheries Research, 248, 106204.
+<https://doi.org/10.1016/j.fishres.2021.106204>

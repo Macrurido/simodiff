@@ -60,8 +60,7 @@ RMarkdown, the prompt appears, but the figure does not.
 If you type 0, you will need to provide the new values for parameters b1 and b2.
 Enter the new value for b1 and press Enter, then do the same for b2.
 
-If you accidentally press Enter without entering a number, the default return
-value will be NA.
+If you accidentally press Enter, a warning pop-up will appear, informing you to enter a numerical value.
 
 ## Arguments
 
