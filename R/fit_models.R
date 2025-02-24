@@ -10,6 +10,9 @@
 #' For more details about the models, see the information about the functions
 #' included in the simodiff package: GoM(), HiM(), LoM(), WeM() and GaM().
 #'
+#' The negative logarithmic likelihood function will be minimized using the
+#' "optim()" function. For more details see optim() function.
+#'
 #' Within a function, an empty list named 'l_models' is created to hold the
 #' summaries of each fit.
 #'
@@ -17,6 +20,7 @@
 #' @param prm    A list that contains the parameter values b1 and b2 of the selected model.
 #' @param lista  A list where the first item contains the original data, and items 2 to B+1 contain the resampled data frames.
 #' @param B      An integer that determines the number of resamplings.
+#' @param nLL    The negative logarithmic likelihood function will be   minimized using the "optim()" function.
 #'
 #' @returns
 #' The function returns a list containing the stored summaries.
@@ -27,9 +31,8 @@
 #' @examples
 #' \dontrun{
 #' set.seed(16)
-#' df <- load("data/Lperu.rda")
-#' df <- df[-1]
 #' df <- Lperu
+#' df <- df[-1]    # Sex column removed
 #'
 #' Imin <- (trunc(min(df$Length)/5))*5
 #' Imax <- (ceiling(max(df$Length)/5))*5
@@ -38,7 +41,7 @@
 #' B <- 3
 #' n <- dim(df)[1]
 #'
-#' f_resample <- simodiff::resample(df, B, n, Imin, Imax, bin)
+#' f_resample <- simodiff::resample(models, prm, lista, B, nLL)
 #' f_resample
 #'
 #' models <- list(GoM=simodiff::GoM, HiM=simodiff::HiM,
@@ -49,12 +52,16 @@
 #'             LoM=c("b1"=38,"b2"=5), WeM=c("b1"=38,"b2"=6),
 #'             GaM=c("b1"=21,"b2"=1.8))
 #'
-#' fits <- fit_models(models, prm, lista=f_resample, B)
+#'  # The function simodiff::nllb() calculates the negative log-likelihood for
+#'  # a binomial distribution.
+#'
+#' fits <- fit_models(models, prm, lista=f_resample,
+#'                    B, nLL= simodiff::nllb)
 #' fits
 #' }
 #'
 #' @export
-fit_models <- function(models, prm, lista, B){
+fit_models <- function(models, prm, lista, B, nLL){
   # The list includes the original and de B resampled data sets.
   B <- B+1
   # Create an empty list to store the model summaries.
@@ -66,8 +73,7 @@ fit_models <- function(models, prm, lista, B){
     betas <- unlist(prm[[i]])
     for(j in 1:B) {
       df <- na.omit(lista[[j]])
-      l_models[[i]][[j]] <- optim(par= betas, fn= nllb, df= df,
-                                  model= model)
+      l_models[[i]][[j]] <- optim(par= betas, fn= nLL, df= df,model= model)
     }
   }
   return(l_models)

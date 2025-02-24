@@ -4,7 +4,7 @@
 \alias{fit_models}
 \title{fit_models}
 \usage{
-fit_models(models, prm, lista, B)
+fit_models(models, prm, lista, B, nLL)
 }
 \arguments{
 \item{models}{A list that stores the functions of selected models for fitting a   cumulative density function.}
@@ -14,6 +14,8 @@ fit_models(models, prm, lista, B)
 \item{lista}{A list where the first item contains the original data, and items 2 to B+1 contain the resampled data frames.}
 
 \item{B}{An integer that determines the number of resamplings.}
+
+\item{nLL}{The negative logarithmic likelihood function will be   minimized using the "optim()" function.}
 }
 \value{
 The function returns a list containing the stored summaries.
@@ -30,15 +32,17 @@ distribution.
 For more details about the models, see the information about the functions
 included in the simodiff package: GoM(), HiM(), LoM(), WeM() and GaM().
 
+The negative logarithmic likelihood function will be minimized using the
+"optim()" function. For more details see optim() function.
+
 Within a function, an empty list named 'l_models' is created to hold the
 summaries of each fit.
 }
 \examples{
 \dontrun{
 set.seed(16)
-df <- load("data/Lperu.rda")
-df <- df[-1]
 df <- Lperu
+df <- df[-1]    # Sex column removed
 
 Imin <- (trunc(min(df$Length)/5))*5
 Imax <- (ceiling(max(df$Length)/5))*5
@@ -47,7 +51,7 @@ bin <- 5
 B <- 3
 n <- dim(df)[1]
 
-f_resample <- simodiff::resample(df, B, n, Imin, Imax, bin)
+f_resample <- simodiff::resample(models, prm, lista, B, nLL)
 f_resample
 
 models <- list(GoM=simodiff::GoM, HiM=simodiff::HiM,
@@ -58,7 +62,11 @@ prm <- list(GoM=c("b1"=38,"b2"=0.1), HiM=c("b1"=38,"b2"=10),
             LoM=c("b1"=38,"b2"=5), WeM=c("b1"=38,"b2"=6),
             GaM=c("b1"=21,"b2"=1.8))
 
-fits <- fit_models(models, prm, lista=f_resample, B)
+ # The function simodiff::nllb() calculates the negative log-likelihood for
+ # a binomial distribution.
+
+fits <- fit_models(models, prm, lista=f_resample,
+                   B, nLL= simodiff::nllb)
 fits
 }
 
