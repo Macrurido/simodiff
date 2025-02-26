@@ -45,8 +45,8 @@ resamplings to be performed.
 \dontrun{
 set.seed(16)
 
-df <- load("data/Lperu.rda")
-df <- df[-1]
+df <- Lperu
+df <- df[,-1] # Sex column removed
 
 Imin <- (trunc(min(df$Length)/5))*5
 Imax <- (ceiling(max(df$Length)/5))*5

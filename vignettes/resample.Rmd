@@ -59,18 +59,17 @@ To determine the mature frequency, the minimum and maximum values of the size ra
 The number of resamplings `B` must be deffined by the researcher, whereas `n`
 indicates the number of rows to be included in the resampled data frame.
 
+```{r, echo=FALSE}
+load("C:/Users/aguir/simodiff/data/Lperu.rda")
+```
+
 
 ```{r, eval = FALSE}
 set.seed(16)
 
-#df <- url('https://github.com/Macrurido/simodiff/blob/master/data/Lperu.rda')
-#load(df)
-#close(df)
-
-
-df <- load("data/Lperu.rda")
-df <- df[-1]
 df <- Lperu
+df <- df[-1]  # Removing the sex column
+
 
 Imin <- (trunc(min(df$Length)/5))*5
 Imax <- (ceiling(max(df$Length)/5))*5
@@ -97,11 +96,10 @@ resample <- function(df, B, n, Imin, Imax, bin){
                           x_total <- r_data[,1]
                           tmp <- r_data[r_data[,2] == 1,]
                           x_active <- tmp[,1]
-                          r_list[[i]] <- simodiff::freq_mature(x_total, x_active,
-                                                              Imin, Imax, bin)
+                          r_list[[i]] <- na.omit(simodiff::freq_mature(x_total, x_active,
+                                                              Imin, Imax, bin))
                     }
                           return(r_list)
 }
-
 ```
 

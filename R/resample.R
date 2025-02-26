@@ -33,8 +33,8 @@
 #' \dontrun{
 #' set.seed(16)
 #'
-#' df <- load("data/Lperu.rda")
-#' df <- df[-1]
+#' df <- Lperu
+#' df <- df[,-1] # Sex column removed
 #'
 #' Imin <- (trunc(min(df$Length)/5))*5
 #' Imax <- (ceiling(max(df$Length)/5))*5
@@ -59,8 +59,8 @@ resample <- function(df, B, n, Imin, Imax, bin){
                           x_total <- r_data[,1]
                           tmp <- r_data[r_data[,2] == 1,]
                           x_active <- tmp[,1]
-                          r_list[[i]] <- simodiff::freq_mature(x_total, x_active,
-                                                              Imin, Imax, bin)
+                          r_list[[i]] <- na.omit(simodiff::freq_mature(x_total, x_active,
+                                                              Imin, Imax, bin))
                     }
                           return(r_list)
 }
