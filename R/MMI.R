@@ -21,9 +21,9 @@
 #' In contrast, the number of columns will remain fixed at nine: "Sex",	"Model",
 #' "n",	"k", "LL", "AICc", "Delta", "exp(-0.5Di)" and	"Wi".
 #'
-#' @param lista: A list with a summary of the fitting results.
-#' @param sex:   A character value that indicates the sex of the organisms.
-#' @param n:     An integer value represents the number of organisms present in the sample.
+#' @param lista A list with a summary of the fitting results.
+#' @param sex   A character value that indicates the sex of the organisms.
+#' @param n     An integer value represents the number of organisms present in the sample.
 #'
 #' @returns
 #' The function outputs a data frame containing the results.

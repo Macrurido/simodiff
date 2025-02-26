@@ -63,7 +63,12 @@ correctly without errors, each list must be named with its
 corresponding model name. If the list does not include them,
 you need to provide their names.
 
-```{r echo=TRUE, eval=FALSE}
+```{r, echo=FALSE}
+load("C:/Users/aguir/simodiff/data/fit_out.rda")
+```
+
+
+```{r echo=TRUE, eval=TRUE}
 lista <- fit_out
 names(lista) <- c("GoM", "HiM", "LoM", "WeM", "GaM") #Naming the items list
 sex <- "Female"

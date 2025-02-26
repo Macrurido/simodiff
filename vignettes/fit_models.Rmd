@@ -62,13 +62,17 @@ of resamplings, denoted as `B`, must be defined by the researcher.
 The negative logarithmic likelihood function will be minimized
 using the `optim()` function. The function `simodiff::nllb()` calculates the negative log-likelihood for a binomial distribution.
 
+```{r, echo=FALSE}
+load("C:/Users/aguir/simodiff/data/Lperu.rda")
+```
+
 
 ```{r, eval = FALSE}
 set.seed(16)
 
 # The database
 df <- Lperu
-df <- df[-1]    # Sex column removed
+df <- df[,-1]    # Sex column removed
 
 # The frequency and proportion of organisms actively reproducing
 # are defined across class intervals for the total number of
@@ -94,7 +98,7 @@ models <- list(GoM=simodiff::GoM, HiM=simodiff::HiM,
              GaM=c("b1"=21,"b2"=1.8))
  
  fits <- fit_models(models, prm, lista=f_resample,
-                    B, nLL= simodiff::nllb)
+                    B, nLL= nllb)
  fits
 ```
 

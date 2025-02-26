@@ -9,9 +9,9 @@ MMI(lista, sex, n)
 \arguments{
 \item{lista}{A list with a summary of the fitting results.}
 
-\item{sex:}{A character value that indicates the sex of the organisms.}
+\item{sex}{A character value that indicates the sex of the organisms.}
 
-\item{n:}{An integer value represents the number of organisms present in the sample.}
+\item{n}{An integer value represents the number of organisms present in the sample.}
 }
 \value{
 The function outputs a data frame containing the results.
