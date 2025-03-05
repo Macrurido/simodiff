@@ -83,7 +83,7 @@ MMI <- function(lista, sex, n){
         (DF_MMI[i*j,3]-DF_MMI[i*j,4]-1)
       if(i== n_models){
         DF_MMI[,7] <- abs(min(DF_MMI[,6])-DF_MMI[,6])
-        DF_MMI[,8] <- exp(-0.5*DF_MMI[,7])
+        DF_MMI[,8] <- exp(-0.5*DF_MMI[,7])/sum(exp(-0.5*DF_MMI[,7]))
         DF_MMI[,9] <- DF_MMI[,8]*100
       }
     }
