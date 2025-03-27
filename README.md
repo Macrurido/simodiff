@@ -142,8 +142,12 @@ alt="glad" />
 <figcaption aria-hidden="true">glad</figcaption>
 </figure>
 
-> \[!NOTE\] The model and the values of parameters B1 and B2 are
-> presented in the console prompt and figure.
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+
+**NOTE:** The model and the values of parameters B1 and B2 are presented
+in the console prompt and figure.
+
+</div>
 
 If you type 0, you will need to provide the new values for parameters b1
 and b2. Enter the new value for b1 and press Enter, then do the same for
@@ -152,9 +156,12 @@ b2.
 If you accidentally press Enter, a warning pop-up will appear, informing
 you to enter a numerical value.
 
-> \[!IMPORTANT\] The `glad_in()` function must be executed in the
-> console; when run from RMarkdown, the prompt appears, but the figure
-> does not.
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+
+**IMPORTANT!** The `glad_in()` function must be executed in the console;
+when run from RMarkdown, the prompt appears, but the figure does not.
+
+</div>
 
 `nllb()` The function calculates the negative log-likelihood for a
 binomial distribution of residuals.
