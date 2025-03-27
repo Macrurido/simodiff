@@ -2,7 +2,7 @@ simodiff: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
 <img src=https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png align='right' height='20%' width='20%'/>
 ================
-21 febrero 2025
+27 marzo 2025
 
 - [simodiff](#simodiff)
   - [Installation](#installation)
@@ -142,7 +142,7 @@ alt="glad" />
 <figcaption aria-hidden="true">glad</figcaption>
 </figure>
 
-> ***NOTE:*** The model and the values of parameters B1 and B2 are
+> \[!NOTE\] The model and the values of parameters B1 and B2 are
 > presented in the console prompt and figure.
 
 If you type 0, you will need to provide the new values for parameters b1
@@ -152,7 +152,7 @@ b2.
 If you accidentally press Enter, a warning pop-up will appear, informing
 you to enter a numerical value.
 
-> ***WARNING:*** The `glad_in()` function must be executed in the
+> \[!IMPORTANT\] The `glad_in()` function must be executed in the
 > console; when run from RMarkdown, the prompt appears, but the figure
 > does not.
 
