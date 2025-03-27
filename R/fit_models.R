@@ -73,7 +73,8 @@ fit_models <- function(models, prm, lista, B, nLL){
     betas <- unlist(prm[[i]])
     for(j in 1:B) {
       df <- na.omit(lista[[j]])
-      l_models[[i]][[j]] <- optim(par= betas, fn= nLL, df= df,model= model)
+      l_models[[i]][[j]] <- tryCatch({optim(par= betas, fn= nLL, df= df,model= model)
+                                  }, error = function(e){paste("Error at index", i)})
     }
   }
   return(l_models)
