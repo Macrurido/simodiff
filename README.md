@@ -2,7 +2,7 @@ simodiff: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
 <img src=https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png align='right' height='20%' width='20%'/>
 ================
-27 marzo 2025
+01 abril 2025
 
 - [simodiff](#simodiff)
   - [Installation](#installation)
@@ -98,6 +98,19 @@ facilitate the implementation of the methodology used in this analysis:
 
 ### General functions
 
+`Bootlier()` The function assesses the resampling performance of the L50
+estimates and produces a frequency histogram known as a Bootlier plot.
+This analysis helps identify any lack of precision in this parameter
+(Singh and Xie, 2003).
+
+`cv_plot()`Plot of cumulative coefficient of variation.
+
+The efficiency of the resamples in the bootstrap simulations was
+analyzed graphically using the number of resamples *versus* the
+coefficient of variation *CV*. The *CV* was calculated for the
+cumulative resamples of each model, with the cumulative values
+increasing after every *ni* data point.
+
 `freq_mature()` The function calculates the absolute frequency of the
 total number of organisms **x_total** and the organisms active during
 reproduction by class interval **x_active**.
@@ -144,7 +157,7 @@ alt="glad" />
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
 
-**NOTE:** The model and the values of parameters B1 and B2 are presented
+**NOTE:** The model and the values of parameters b1 and b2 are presented
 in the console prompt and figure.
 
 </div>
