@@ -2,7 +2,7 @@ simodiff: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
 <img src=https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png align='right' height='20%' width='20%'/>
 ================
-01 abril 2025
+04 abril 2025
 
 - [simodiff](#simodiff)
   - [Installation](#installation)
@@ -175,6 +175,13 @@ you to enter a numerical value.
 when run from RMarkdown, the prompt appears, but the figure does not.
 
 </div>
+
+`model_bars()` This function provides a graphical comparison of the
+optimal value of L50, represented by a black circle, along with its
+non-parametric confidence interval indicated by whiskers for various
+models. The models are organized based on their asymmetry attribute,
+ranging from right-biased to left-biased. The average **AvM** model is
+positioned on the far right of the x-axis.
 
 `nllb()` The function calculates the negative log-likelihood for a
 binomial distribution of residuals.
