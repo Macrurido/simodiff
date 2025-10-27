@@ -93,6 +93,6 @@ cv_plot <- function(df,ni,B,nb, x_label, y_label){
     scale_linetype_binned()+
     geom_line(aes(x= .data$X, y= as.numeric(.data$cv), lty = 1)) +
     labs(x= x_label, y= y_label) +
-    facet_wrap(~factor(as.factor(model), scales = "free_y", levels= unique(model)))
+    facet_wrap(~factor(as.factor(model), scales = "free", levels= unique(model)))
   print(p)
 }
