@@ -13,7 +13,7 @@
 #' @param Imin    A numerical value of the shortest range of L50 for all models.
 #' @param Imax    A numerical value of the longest range of L50 for all models.
 #' @param bin     A numeric value that represents the amplitude of the class interval.
-#' @param opt A data frame for vertical lines contains the estimated values from the original data.
+#' @param opt     A data frame for vertical lines contains the estimated values from the original data.
 #' @param x_label A character vector with the label for the X-axis.
 #' @param y_label A character vector with the label for the y-axis.
 #'

@@ -2,7 +2,7 @@ simodiff: Sigmoidal models with different functional forms to estimate
 length at 50% maturity
 <img src=https://github.com/Macrurido/simodiff/blob/master/man/figures/simodiff.png align='right' height='20%' width='20%'/>
 ================
-04 abril 2025
+10 abril 2025
 
 - [simodiff](#simodiff)
   - [Installation](#installation)
